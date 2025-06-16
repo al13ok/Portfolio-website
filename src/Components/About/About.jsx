@@ -21,11 +21,7 @@ const About = () => {
                   Frontend developer
                 </h1>
                 <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores explicabo deserunt asperiores quasi, vitae blanditiis
-                  perferendis quos consectetur ea harum! Libero aut qui
-                  similique recusandae provident consectetur sed itaque alias
-                  sint ipsa?
+                  I'm a frontend developer skilled in HTML, CSS, JavaScript, and React. I build responsive, user-friendly websites with clean design and smooth functionality. I'm experienced with tools like Tailwind CSS, GitHub, and have deployed projects using platforms like Netlify and Vercel.
                 </p>
               </span>
             </div>
