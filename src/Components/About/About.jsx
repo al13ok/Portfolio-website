@@ -33,8 +33,7 @@ const About = () => {
                   Database developer
                 </h1>
                 <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores
+                  As a backend and database developer, I focus on crafting efficient, secure, and scalable full-stack applications.
                 </p>
               </span>
             </div>
@@ -46,9 +45,9 @@ const About = () => {
                   Backend developer
                 </h1>
                 <p className="text-sm md:text-md leading-tight">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Maiores explicabo deserunt asperiores quasi, vitae blanditiis
-                  perferendis
+                  I started my backend journey with Node.js and Express.js, building APIs and connecting them to MongoDB. From authentication to deployment, I’ve developed full-stack apps that solve real problems—turning concepts into working systems.
+
+
                 </p>
               </span>
             </div>

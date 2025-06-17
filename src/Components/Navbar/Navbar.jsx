@@ -1,51 +1,62 @@
 import React, { useState } from "react";
 import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
+
 const Navbar = () => {
   const [menu, openMenu] = useState(false);
   const [showMenu, setShowmenu] = useState(true);
-  return (
-    <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
-      <span className="text-xl font-bold tracking-wide">Portfolio</span>
 
+  return (
+    <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 w-[92%] max-w-6xl bg-white/60 backdrop-blur-md border border-gray-300 text-black rounded-full px-4 py-2.5 shadow-md flex justify-between items-center z-50">
+
+      {/* Logo */}
+      <span className="text-lg md:text-xl font-bold tracking-wide text-blue-600">
+        Portfolio
+      </span>
+
+      {/* Links */}
       <ul
         className={`${
-          menu ? "block" : "hidden"
-        }     mx-24 p-y2 mt-4 font-semibold md:mt-5 bg-black px-2 rounded-xl bg-opacity-30 md:border-none text-center md:bg-transparent md:static md:mx-0 md:flex gap-6`}
+          menu
+            ? "block absolute top-16 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-md rounded-xl px-6 py-4 shadow-md md:static md:flex"
+            : "hidden md:flex"
+        } font-medium space-y-4 md:space-y-0 md:space-x-6 text-center text-sm transition-all duration-300`}
       >
         <a href="#About">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">
-            About
-          </li>
+          <li className="text-gray-600 hover:text-blue-500 transition">About</li>
         </a>
         <a href="#Experience">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">
-            Experience
-          </li>
+          <li className="text-gray-600 hover:text-blue-500 transition">Experience</li>
         </a>
         <a href="#Projects">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">
-            Projects
-          </li>
-        </a>
-        <a href="#Footer">
-          <li className="text-md transition-all duration-300 p-1 md:p-0">
-            Contact
-          </li>
+          <li className="text-gray-600 hover:text-blue-500 transition">Projects</li>
         </a>
       </ul>
+
+      {/* Contact Me Button */}
+      <a href="#Footer">
+        <button className="hidden md:block bg-blue-600 hover:bg-blue-700 text-white text-sm px-4 py-1.5 rounded-full transition">
+          Contact Me
+        </button>
+      </a>
+
+      {/* Hamburger Menu */}
       {showMenu ? (
         <RiMenu2Line
-          size={30}
-          className="md:hidden absolute right-10 top-6 transition-all duration-300"
+          size={26}
+          className="md:hidden text-blue-500"
           onClick={() => {
             openMenu(!menu);
-            setShowmenu(!showMenu);
+            setShowmenu(false);
           }}
         />
       ) : (
         <RiCloseLine
-          size={30}
-          className="md:hidden absolute right-10 top-6 transition-all duration-300"
+          size={26}
+          className="md:hidden text-blue-500"
+          onClick={() => {
+            openMenu(!menu);
+            setShowmenu(true);
+          }}
         />
       )}
     </nav>

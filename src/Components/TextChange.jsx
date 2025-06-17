@@ -1,33 +1,47 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+
 const TextChange = () => {
-const texts = ["Hi, I'm Alok Ranjan", "Hi, I'm Alok Ranjan,", "Hi, I'm Alok Ranjan"];
-  const [currenText, setCurrentText] = useState("");
-  const [endValue, setendValue] = useState(true);
-  const [isForward, setIsForward] = useState(true);
-  const [index, setIndex] = useState(0);
+  const texts = [
+    "Hi, I'm <span class='text-blue-700'>Alok Ranjan</span>",
+    "I don’t just build websites — I bring visions to life with relentless dedication.",
+  ];
+
+  const [currentText, setCurrentText] = useState("");
+  const [lineIndex, setLineIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [typingDone, setTypingDone] = useState(false);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentText(texts[index].substring(0, endValue));
-      if (isForward) {
-        setendValue((prev) => prev + 1);
+    if (typingDone) return;
+
+    const interval = setInterval(() => {
+      const currentLine = texts[lineIndex];
+
+      if (charIndex < currentLine.length) {
+        setCurrentText((prev) => prev + currentLine[charIndex]);
+        setCharIndex((prev) => prev + 1);
       } else {
-        setendValue((prev) => prev - 1);
+        if (lineIndex < texts.length - 1) {
+          setLineIndex((prev) => prev + 1);
+          setCharIndex(0);
+          setCurrentText((prev) => prev + "<br/>");
+        } else {
+          clearInterval(interval);
+          setTypingDone(true);
+        }
       }
-      if (endValue > texts[index].length + 10) {
-        setIsForward(false);
-      }
-      if (endValue < 2.1) {
-        setIsForward(true);
-        setIndex((prev) => prev & texts.length);
-      }
-    }, 50);
+    }, 40);
 
-    return () => clearInterval(intervalId);
-  }, [endValue, isForward, index, texts]);
+    return () => clearInterval(interval);
+  }, [charIndex, lineIndex, typingDone, texts]);
 
-  return <div className="transition ease duration-300">{currenText}</div>;
+  return (
+    <div
+      className="text-xl md:text-4xl font-bold text-black min-h-[12rem] leading-relaxed tracking-tight whitespace-pre-line"
+      dangerouslySetInnerHTML={{ __html: currentText }}
+    />
+  );
 };
 
 export default TextChange;
+

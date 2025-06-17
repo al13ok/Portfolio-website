@@ -4,24 +4,45 @@ import TextChange from "../TextChange";
 
 const Home = () => {
   return (
-    <div className="text-white flex w-full justify-between items-start p-10 md:p-20">
-      <div className="md:w-2/4 md:pt-10 ">
-        <h1 className="text-xl md:text-6xl font-bold flex leading-normal tracking-tighter">
+    <section
+      id="Home"
+      className="bg-white min-h-screen flex flex-col-reverse md:flex-row items-center justify-center md:justify-between px-6 md:px-20 py-12 gap-10"
+    >
+      {/* Left Content */}
+      <div className="md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
+        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           <TextChange />
         </h1>
-        <p className="text-sm md:text-2xl tracking-tight ">
-           I don’t just build websites—I bring visions to life with relentless dedication.
+        
+        <div className="flex gap-4 mt-5 md:mt-10">
+  <a
+    href="#Footer"
+    className="text-white py-2 px-4 text-sm md:text-lg font-semibold rounded-3xl bg-blue-700 hover:bg-blue-800 transition"
+  >
+    Contact Me
+  </a>
 
+  <a
+    href="/Alok-Ranjan-Resume.pdf"  // Ye file public folder mein honi chahiye
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-blue-700 border-2 border-blue-700 py-2 px-4 text-sm md:text-lg font-semibold rounded-3xl hover:bg-blue-700 hover:text-white transition"
+  >
+    Resume
+  </a>
+</div>
 
-        </p>
-        <button className="mt-5 md:md-10 text-white py02 px-3 text-sm md:text-lg md:py-2 md:px-4 hover:opacity-85 duration-300 hover:scale-105 font-semibold rounded-3xl bg-[#465697]">
-          Contact Me
-        </button>
       </div>
-      <div>
-        <img className="" src={avatarImg} alt="" />
+
+      {/* Right Image */}
+      <div className="md:w-1/2 flex justify-center">
+        <img
+          src={avatarImg}
+          alt="avatar"
+          className="w-64 md:w-[360px] object-contain drop-shadow-xl"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 
