@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 
 const TextChange = () => {
   const texts = [
-    "Hi, I'm <span class='text-blue-700'>Alok Ranjan</span>",
-    "I don’t just build websites — I bring visions to life with relentless dedication.",
+    `Hi, I'm <span class='text-blue-700 font-semibold text-2xl md:text-4xl'>Alok Ranjan</span>`,
+    `<span class='block mt-4 text-sm md:text-lg text-gray-700 font-normal'>
+      I don’t just build websites — I bring visions to life with relentless dedication.
+    </span>`,
   ];
 
   const [currentText, setCurrentText] = useState("");
@@ -44,4 +46,3 @@ const TextChange = () => {
 };
 
 export default TextChange;
-

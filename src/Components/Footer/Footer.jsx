@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <div
       id="Footer"
-      className="flex justify-around bg-blue-700 text-white p-10 md:p-12 items-center"
+      className="flex justify-around bg-blue-700 text-white p-10 md:p-12 items-center flex-col md:flex-row gap-6"
     >
       <div>
         <h1 className="text-2xl md:text-6xl font-bold">Contact</h1>
@@ -16,18 +16,37 @@ const Footer = () => {
         </h3>
       </div>
 
-      <ul className="text-sm md:text-xl">
-        <li className="flex gap-1 items-center">
+      <ul className="text-sm md:text-xl space-y-2">
+        <li className="flex gap-2 items-center">
           <MdOutlineEmail size={20} />
-          al1312ok@gmail.com
+          <a
+            href="mailto:al1312ok@gmail.com"
+            className="hover:underline"
+          >
+            al1312ok@gmail.com
+          </a>
         </li>
-        <li className="flex gap-1 items-center">
-          <CiLinkedin />
-          linkdlin.com/alokranjan-tech
+        <li className="flex gap-2 items-center">
+          <CiLinkedin size={20} />
+          <a
+            href="https://linkedin.com/in/alokranjan-tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            linkedin.com/in/alokranjan-tech
+          </a>
         </li>
-        <li className="flex gap-1 items-center">
-          <FaGithub />
-          github.com/al13ok
+        <li className="flex gap-2 items-center">
+          <FaGithub size={20} />
+          <a
+            href="https://github.com/al13ok"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            github.com/al13ok
+          </a>
         </li>
       </ul>
     </div>

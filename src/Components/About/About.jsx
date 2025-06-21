@@ -1,60 +1,69 @@
 import React from "react";
 import AboutImg from "../../assets/man.png";
-import { IoArrowForward } from "react-icons/io5";
+
 const About = () => {
   return (
-    <div
+    <section
       id="About"
-      className="text-white md:flex overflow-hidden items-center md:flex-wrap md:justify-center bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12"
+      className="bg-white text-gray-800 px-6 md:px-20 py-20"
     >
-      <div>
-        <h2 className="text-2xl md:text-4xl font-bold">About</h2>
-        <div className="md:flex flex-wrap flex-col md:flex-row items-center">
-          <img className="md:h-80" src={AboutImg} alt="About img" />
+      {/* Heading */}
+      <div className="text-center mb-10">
+        <h2 className="text-blue-700 font-semibold text-lg tracking-wide uppercase">
+          About Me
+        </h2>
+        <h1 className="text-3xl md:text-5xl font-bold mt-2">
+          Who is Alok Ranjan?
+        </h1>
+        <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-sm md:text-md">
+          Alok Ranjan is a Full Stack Developer who blends frontend finesse with backend logic.
+          He's passionate about solving real-world problems using clean and scalable code.
+        </p>
+      </div>
 
-          <ul>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
+      {/* Top Section */}
+      <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+        {/* Left: Image */}
+        <img
+          src={AboutImg}
+          alt="Alok Ranjan"
+          className="w-72 h-72 object-cover rounded-xl shadow-md"
+        />
 
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Frontend developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  I'm a frontend developer skilled in HTML, CSS, JavaScript, and React. I build responsive, user-friendly websites with clean design and smooth functionality. I'm experienced with tools like Tailwind CSS, GitHub, and have deployed projects using platforms like Netlify and Vercel.
-                </p>
-              </span>
+        {/* Right: Description & Button */}
+        <div className="space-y-6 text-center md:text-left">
+          <p className="text-md md:text-lg">
+            I’m skilled in React, Node.js, MongoDB, and Tailwind CSS, with hands-on experience building full-stack apps from scratch. I also enjoy deploying and managing apps on platforms like Vercel and Netlify.
+          </p>
+
+          {/* Quick Stats */}
+          <div className="flex justify-center md:justify-start gap-6 text-center">
+            <div>
+              <h2 className="text-3xl font-bold text-blue-700">10+</h2>
+              <p className="text-xs text-gray-500">Projects Completed</p>
             </div>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
-
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Database developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  As a backend and database developer, I focus on crafting efficient, secure, and scalable full-stack applications.
-                </p>
-              </span>
+            <div>
+              <h2 className="text-3xl font-bold text-blue-700">5+</h2>
+              <p className="text-xs text-gray-500">Tech Stacks Used</p>
             </div>
-            <div className="flex gap-3 py-4">
-              <IoArrowForward size={30} className="mt-1" />
-
-              <span className="w-96">
-                <h1 className="text-xl md:text-2xl font-semibold leading-normal">
-                  Backend developer
-                </h1>
-                <p className="text-sm md:text-md leading-tight">
-                  I started my backend journey with Node.js and Express.js, building APIs and connecting them to MongoDB. From authentication to deployment, I’ve developed full-stack apps that solve real problems—turning concepts into working systems.
-
-
-                </p>
-              </span>
+            <div>
+              <h2 className="text-3xl font-bold text-blue-700">1+</h2>
+              <p className="text-xs text-gray-500">Years Experience</p>
             </div>
-          </ul>
+          </div>
+
+          {/* Button */}
+          <a
+            href="/Resume_Alok_Full.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-4 px-6 py-3 bg-blue-700 text-white rounded-lg hover:bg-blue-800 transition font-medium"
+          >
+            Download Resume
+          </a>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

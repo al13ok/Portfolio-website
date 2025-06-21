@@ -21,11 +21,11 @@ const Navbar = () => {
             : "hidden md:flex"
         } font-medium space-y-4 md:space-y-0 md:space-x-6 text-center text-sm transition-all duration-300`}
       >
+        <a href="#Home">
+          <li className="text-gray-600 hover:text-blue-500 transition">Home</li>
+        </a>
         <a href="#About">
           <li className="text-gray-600 hover:text-blue-500 transition">About</li>
-        </a>
-        <a href="#Experience">
-          <li className="text-gray-600 hover:text-blue-500 transition">Experience</li>
         </a>
         <a href="#Projects">
           <li className="text-gray-600 hover:text-blue-500 transition">Projects</li>
